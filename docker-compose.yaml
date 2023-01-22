@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  fastapi_app:
+    build:
+      context: .
+    image: fastapi_app:latest
+    ports:
+      - target: 80
+        published: 8000
+    volumes:
+      - type: bind
+        source: ./app
+        target: /app
